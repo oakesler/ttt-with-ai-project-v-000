@@ -40,6 +40,7 @@ class Board
   end
   
   def taken?(x)
+    binding.pry
     !@cells[x.to_i- 1] == " " || @cells[x.to_i - 1] == ""
   end
   
