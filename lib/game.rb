@@ -70,15 +70,14 @@ class Game
   
   def turn
     a = current_player.move(board)
+    if board.valid_move?(a)
+      board.update(a, current_player)
+      board.display
+    end
     while !board.valid_move?(a)
     a = current_player.move(board)
     board.update(a, current_player)
     board.display
-    break 
-    if board.valid_move?(a)
-      board.update(a, current_player)
-      board.display
-      end
     end
   end
   
