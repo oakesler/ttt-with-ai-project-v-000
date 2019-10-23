@@ -77,12 +77,6 @@ class Game
     if board.valid_move?(a)
       board.update(a, current_player)
       board.display
-      elsif !board.valid_move?(a)
-        while !board.valid_move?(b)
-        b = current_player.move(board)
-        board.update(b, current_player)
-        board.display
-      end
     end
   end
   
