@@ -40,8 +40,7 @@ class Board
   end
   
   def taken?(x)
-    binding.pry
-    @cells[x.to_i- 1] == " " || @cells[x.to_i - 1] == ""
+    @cells[x.to_i- 1] == "X" || @cells[x.to_i - 1] == "O"
   end
   
   def valid_move?(x)
