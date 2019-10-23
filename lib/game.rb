@@ -70,13 +70,14 @@ class Game
   
   def turn
     a = current_player.move(board)
+    b = " "
     if board.valid_move?(a)
       board.update(a, current_player)
       board.display
       elsif !board.valid_move?(a)
-        while !board.valid_move?(a)
-        a = current_player.move(board)
-        board.update(a, current_player)
+        while !board.valid_move?(b)
+        b = current_player.move(board)
+        board.update(b, current_player)
         board.display
       end
     end
