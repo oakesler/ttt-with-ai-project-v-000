@@ -72,15 +72,12 @@ class Game
     a = current_player.move(board)
     while !board.valid_move?(a)
     a = current_player.move(board)
+    board.update(a, current_player)
+    board.display
+    break 
+    if board.valid_move?(a)
       board.update(a, current_player)
       board.display
-    end
-    while !board.valid_move?(a)
-      puts "Please enter a valid position:"
-      b = gets.strip
-      if board.valid_move?(b)
-        board.update(b, current_player)
-        board.display
       end
     end
   end
